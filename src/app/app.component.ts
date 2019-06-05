@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Joke } from './models';
+import { JokeService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor() {}
+  jokes: Joke[] = [];
 
-  onFetchJokes() {}
+  constructor(private jokeService: JokeService) {}
+
+  onFetchJokes() {
+    this.jokes = [{ id: 1, joke: 'Mock' }];
+  }
 }

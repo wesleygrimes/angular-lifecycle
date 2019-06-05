@@ -1,0 +1,3 @@
+<button (click)="fetch.emit()">Fetch Jokes</button>
+<br />
+<app-joke-item *ngFor="let joke of jokes" [joke]="joke"></app-joke-item>
